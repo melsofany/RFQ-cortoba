@@ -33,8 +33,8 @@ export default function PricingRequestPDF({
   };
 
   return (
-    <div className="pdf-content bg-white max-w-4xl mx-auto flex flex-col p-6" style={{ minHeight: '297mm' }}>
-      <div className="flex-1 flex flex-col">
+    <div className="pdf-content bg-white max-w-4xl mx-auto flex flex-col p-6" style={{ minHeight: 'auto', width: '100%', overflow: 'hidden' }}>
+      <div className="w-full flex flex-col">
         {/* Blue Header */}
         <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-2 px-6 mb-2 rounded-t-lg">
           <div className="flex items-center justify-between mb-1">
@@ -121,13 +121,13 @@ export default function PricingRequestPDF({
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Footer - Pushed to the very bottom of the last page */}
-      <div className="pt-2 border-t border-gray-200 mt-auto">
-        <p className="text-center text-[10px] text-gray-500">
-          © 2026 Cortoba Supplies Company - All Rights Reserved
-        </p>
+        {/* Footer - Positioned directly after content */}
+        <div className="pt-2 border-t border-gray-200 mt-2">
+          <p className="text-center text-[10px] text-gray-500">
+            © 2026 Cortoba Supplies Company - All Rights Reserved
+          </p>
+        </div>
       </div>
     </div>
   );
