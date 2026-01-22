@@ -1,3 +1,5 @@
+import logo from '../assets/images/logo.png';
+
 interface LineItem {
   lineItem: string;
   partNumber: string;
@@ -36,15 +38,12 @@ export default function PricingRequestPDF({
       <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-4 px-6 mb-3">
         <div className="flex items-center justify-between mb-2">
           <div className="flex-1 text-center">
-            <h1 className="text-xl font-bold tracking-wide mb-1">CORTOBA SUPPLIES</h1>
-            <p className="text-xs opacity-90">Cortoba Supplies Company</p>
+            <h1 className="text-xl font-bold tracking-wide mb-1 uppercase">CORTOBA SUPPLIES</h1>
+            <p className="text-xs opacity-90">شركة قرطبة للتوريدات</p>
           </div>
           <div className="flex-shrink-0 ml-4">
-            <div className="bg-white rounded-lg p-2 h-14 w-14 flex items-center justify-center">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="20" cy="20" r="18" fill="#1E40AF" stroke="#1E3A8A" strokeWidth="2"/>
-                <text x="20" y="26" fontSize="20" fontWeight="bold" fill="white" textAnchor="middle" fontFamily="Arial, sans-serif">CS</text>
-              </svg>
+            <div className="bg-white rounded-lg p-1 h-20 w-20 flex items-center justify-center overflow-hidden">
+              <img src={logo} alt="Logo" className="max-h-full max-w-full object-contain" />
             </div>
           </div>
         </div>
