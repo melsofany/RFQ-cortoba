@@ -33,26 +33,26 @@ export default function PricingRequestPDF({
   };
 
   return (
-    <div className="pdf-content bg-white max-w-4xl mx-auto flex flex-col p-6" style={{ minHeight: 'auto' }}>
-      {/* Blue Header */}
-      <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-2 px-6 mb-2 rounded-t-lg">
-        <div className="flex items-center justify-between mb-1">
-          <div className="flex-1 text-center">
-            <h1 className="text-lg font-bold tracking-wide mb-0 uppercase">CORTOBA SUPPLIES</h1>
-            <p className="text-[10px] opacity-90 leading-tight">شركة قرطبة للتوريدات</p>
-          </div>
-          <div className="flex-shrink-0 ml-4">
-            <div className="bg-white rounded p-1 h-14 w-14 flex items-center justify-center overflow-hidden">
-              <img src={logo} alt="Logo" className="max-h-full max-w-full object-contain" />
+    <div className="pdf-content bg-white max-w-4xl mx-auto flex flex-col p-6" style={{ minHeight: '297mm' }}>
+      <div className="flex-1 flex flex-col">
+        {/* Blue Header */}
+        <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-2 px-6 mb-2 rounded-t-lg">
+          <div className="flex items-center justify-between mb-1">
+            <div className="flex-1 text-center">
+              <h1 className="text-lg font-bold tracking-wide mb-0 uppercase">CORTOBA SUPPLIES</h1>
+              <p className="text-[10px] opacity-90 leading-tight">شركة قرطبة للتوريدات</p>
+            </div>
+            <div className="flex-shrink-0 ml-4">
+              <div className="bg-white rounded p-1 h-14 w-14 flex items-center justify-center overflow-hidden">
+                <img src={logo} alt="Logo" className="max-h-full max-w-full object-contain" />
+              </div>
             </div>
           </div>
+          <div className="text-center text-[10px] opacity-90 leading-tight">
+            <p>Email: info@cortoba-supplies.com | Phone: 01009988569 | Address: Alam El-Roum St., Marsa Matrouh</p>
+          </div>
         </div>
-        <div className="text-center text-[10px] opacity-90 leading-tight">
-          <p>Email: info@cortoba-supplies.com | Phone: 01009988569 | Address: Alam El-Roum St., Marsa Matrouh</p>
-        </div>
-      </div>
 
-      <div className="flex-1 flex flex-col">
         {/* Title */}
         <div className="border border-blue-700 rounded mb-2 flex items-center justify-center py-1">
           <h2 className="text-sm font-bold text-blue-800">PRICING REQUEST</h2>
@@ -121,13 +121,13 @@ export default function PricingRequestPDF({
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Footer */}
-        <div className="pt-2 border-t border-gray-200 mt-auto">
-          <p className="text-center text-[10px] text-gray-500">
-            © 2026 Cortoba Supplies Company - All Rights Reserved
-          </p>
-        </div>
+      {/* Footer - Pushed to the very bottom of the last page */}
+      <div className="pt-2 border-t border-gray-200 mt-auto">
+        <p className="text-center text-[10px] text-gray-500">
+          © 2026 Cortoba Supplies Company - All Rights Reserved
+        </p>
       </div>
     </div>
   );
