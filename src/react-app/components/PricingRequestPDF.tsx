@@ -82,26 +82,26 @@ export default function PricingRequestPDF({
 
         {/* Line Items Table */}
         <div className="mb-2">
-          <table className="w-full text-[10px] border-collapse">
+          <table className="w-full text-[9px] border-collapse">
             <thead>
               <tr className="bg-gradient-to-r from-gray-700 to-gray-800 text-white">
-                <th className="px-1.5 py-1 text-center w-8">No.</th>
-                <th className="px-1.5 py-1 text-center w-24">Part Number</th>
-                <th className="px-1.5 py-1 text-left">Description</th>
-                <th className="px-1.5 py-1 text-center w-16">Unit</th>
-                <th className="px-1.5 py-1 text-center w-12">Qty</th>
-                <th className="px-1.5 py-1 text-center w-20">Price</th>
+                <th className="px-1 py-0.5 text-center w-6">No.</th>
+                <th className="px-1 py-0.5 text-center w-20">Part Number</th>
+                <th className="px-1 py-0.5 text-left">Description</th>
+                <th className="px-1 py-0.5 text-center w-14">Unit</th>
+                <th className="px-1 py-0.5 text-center w-10">Qty</th>
+                <th className="px-1 py-0.5 text-center w-16">Price</th>
               </tr>
             </thead>
             <tbody>
               {lineItems.map((item, index) => (
                 <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td className="border border-gray-300 px-1.5 py-1 text-center">{index + 1}</td>
-                  <td className="border border-gray-300 px-1.5 py-1 text-center font-mono">{item.partNumber}</td>
-                  <td className="border border-gray-300 px-1.5 py-1 leading-tight">{item.description}</td>
-                  <td className="border border-gray-300 px-1.5 py-1 text-center">{item.unit}</td>
-                  <td className="border border-gray-300 px-1.5 py-1 text-center">{item.quantity}</td>
-                  <td className="border border-gray-300 px-1.5 py-1 text-center bg-gray-50"></td>
+                  <td className="border border-gray-300 px-1 py-0.5 text-center">{index + 1}</td>
+                  <td className="border border-gray-300 px-1 py-0.5 text-center font-mono">{item.partNumber}</td>
+                  <td className="border border-gray-300 px-1 py-0.5 leading-tight">{item.description}</td>
+                  <td className="border border-gray-300 px-1 py-0.5 text-center">{item.unit}</td>
+                  <td className="border border-gray-300 px-1 py-0.5 text-center">{item.quantity}</td>
+                  <td className="border border-gray-300 px-1 py-0.5 text-center bg-gray-50"></td>
                 </tr>
               ))}
             </tbody>
