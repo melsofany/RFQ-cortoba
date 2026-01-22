@@ -35,32 +35,32 @@ export default function PricingRequestPDF({
   return (
     <div className="pdf-content bg-white max-w-4xl mx-auto flex flex-col" style={{ minHeight: '297mm', paddingTop: '0' }}>
       {/* Blue Header */}
-      <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-4 px-6 mb-3">
-        <div className="flex items-center justify-between mb-2">
+      <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-2 px-6 mb-2">
+        <div className="flex items-center justify-between mb-1">
           <div className="flex-1 text-center">
-            <h1 className="text-xl font-bold tracking-wide mb-1 uppercase">CORTOBA SUPPLIES</h1>
-            <p className="text-xs opacity-90">شركة قرطبة للتوريدات</p>
+            <h1 className="text-lg font-bold tracking-wide mb-0 uppercase">CORTOBA SUPPLIES</h1>
+            <p className="text-[10px] opacity-90 leading-tight">شركة قرطبة للتوريدات</p>
           </div>
           <div className="flex-shrink-0 ml-4">
-            <div className="bg-white rounded-lg p-1 h-20 w-20 flex items-center justify-center overflow-hidden">
+            <div className="bg-white rounded p-1 h-14 w-14 flex items-center justify-center overflow-hidden">
               <img src={logo} alt="Logo" className="max-h-full max-w-full object-contain" />
             </div>
           </div>
         </div>
-        <div className="text-center text-xs opacity-90">
+        <div className="text-center text-[10px] opacity-90 leading-tight">
           <p>Email: info@cortoba-supplies.com | Phone: 01009988569 | Address: Alam El-Roum St., Marsa Matrouh</p>
         </div>
       </div>
 
       <div className="px-6 flex-1 flex flex-col">
         {/* Title */}
-        <div className="border-2 border-blue-700 rounded-lg mb-4 flex items-center justify-center py-2">
-          <h2 className="text-lg font-bold text-blue-800">PRICING REQUEST</h2>
+        <div className="border border-blue-700 rounded mb-2 flex items-center justify-center py-1">
+          <h2 className="text-sm font-bold text-blue-800">PRICING REQUEST</h2>
         </div>
 
         {/* Request Info - Single Row */}
-        <div className="mb-4 bg-gray-50 p-3 rounded-lg">
-          <div className="flex items-center justify-between text-sm">
+        <div className="mb-2 bg-gray-50 p-2 rounded">
+          <div className="flex items-center justify-between text-[11px]">
             <div className="flex items-center gap-2">
               <span className="font-semibold text-gray-700">Request No:</span>
               <span className="text-gray-900">{requestNumber}</span>
@@ -81,27 +81,27 @@ export default function PricingRequestPDF({
         </div>
 
         {/* Line Items Table */}
-        <div className="mb-4">
-          <table className="w-full text-xs border-collapse">
+        <div className="mb-2">
+          <table className="w-full text-[10px] border-collapse">
             <thead>
               <tr className="bg-gradient-to-r from-gray-700 to-gray-800 text-white">
-                <th className="px-2 py-1.5 text-center w-10">No.</th>
-                <th className="px-2 py-1.5 text-center">Part Number</th>
-                <th className="px-2 py-1.5 text-left">Description</th>
-                <th className="px-2 py-1.5 text-center w-20">Unit</th>
-                <th className="px-2 py-1.5 text-center w-16">Quantity</th>
-                <th className="px-2 py-1.5 text-center w-24">Unit Price</th>
+                <th className="px-1.5 py-1 text-center w-8">No.</th>
+                <th className="px-1.5 py-1 text-center w-24">Part Number</th>
+                <th className="px-1.5 py-1 text-left">Description</th>
+                <th className="px-1.5 py-1 text-center w-16">Unit</th>
+                <th className="px-1.5 py-1 text-center w-12">Qty</th>
+                <th className="px-1.5 py-1 text-center w-20">Price</th>
               </tr>
             </thead>
             <tbody>
               {lineItems.map((item, index) => (
                 <tr key={index} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                  <td className="border border-gray-300 px-2 py-1.5 text-center">{index + 1}</td>
-                  <td className="border border-gray-300 px-2 py-1.5 text-center">{item.partNumber}</td>
-                  <td className="border border-gray-300 px-2 py-1.5">{item.description}</td>
-                  <td className="border border-gray-300 px-2 py-1.5 text-center">{item.unit}</td>
-                  <td className="border border-gray-300 px-2 py-1.5 text-center">{item.quantity}</td>
-                  <td className="border border-gray-300 px-2 py-1.5 text-center bg-gray-50"></td>
+                  <td className="border border-gray-300 px-1.5 py-1 text-center">{index + 1}</td>
+                  <td className="border border-gray-300 px-1.5 py-1 text-center font-mono">{item.partNumber}</td>
+                  <td className="border border-gray-300 px-1.5 py-1 leading-tight">{item.description}</td>
+                  <td className="border border-gray-300 px-1.5 py-1 text-center">{item.unit}</td>
+                  <td className="border border-gray-300 px-1.5 py-1 text-center">{item.quantity}</td>
+                  <td className="border border-gray-300 px-1.5 py-1 text-center bg-gray-50"></td>
                 </tr>
               ))}
             </tbody>
@@ -109,10 +109,10 @@ export default function PricingRequestPDF({
         </div>
 
         {/* Responsible Person */}
-        <div className="mb-6 bg-gray-50 p-3 rounded-lg">
-          <div className="flex items-center justify-between text-sm">
+        <div className="mb-4 bg-gray-50 p-2 rounded">
+          <div className="flex items-center justify-between text-[11px]">
             <div className="flex items-center gap-2">
-              <span className="font-semibold text-gray-700">Responsible Person:</span>
+              <span className="font-semibold text-gray-700">Responsible:</span>
               <span className="text-gray-900">{responsiblePerson}</span>
             </div>
             <div className="flex items-center gap-2">
