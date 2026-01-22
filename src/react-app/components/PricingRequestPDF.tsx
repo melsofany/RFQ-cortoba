@@ -33,9 +33,9 @@ export default function PricingRequestPDF({
   };
 
   return (
-    <div className="pdf-content bg-white max-w-4xl mx-auto flex flex-col" style={{ minHeight: '297mm', paddingTop: '0' }}>
+    <div className="pdf-content bg-white max-w-4xl mx-auto flex flex-col p-6" style={{ minHeight: 'auto' }}>
       {/* Blue Header */}
-      <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-2 px-6 mb-2">
+      <div className="bg-gradient-to-r from-blue-700 to-blue-800 text-white py-2 px-6 mb-2 rounded-t-lg">
         <div className="flex items-center justify-between mb-1">
           <div className="flex-1 text-center">
             <h1 className="text-lg font-bold tracking-wide mb-0 uppercase">CORTOBA SUPPLIES</h1>
@@ -52,7 +52,7 @@ export default function PricingRequestPDF({
         </div>
       </div>
 
-      <div className="px-6 flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col">
         {/* Title */}
         <div className="border border-blue-700 rounded mb-2 flex items-center justify-center py-1">
           <h2 className="text-sm font-bold text-blue-800">PRICING REQUEST</h2>
@@ -122,12 +122,9 @@ export default function PricingRequestPDF({
           </div>
         </div>
 
-        {/* Spacer to push footer to bottom */}
-        <div className="flex-1"></div>
-
         {/* Footer */}
-        <div className="pt-3 border-t border-gray-300">
-          <p className="text-center text-xs text-gray-600">
+        <div className="pt-2 border-t border-gray-200 mt-auto">
+          <p className="text-center text-[10px] text-gray-500">
             © 2026 Cortoba Supplies Company - All Rights Reserved
           </p>
         </div>
