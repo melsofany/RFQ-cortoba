@@ -1,7 +1,14 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 import { serve } from "@hono/node-server";
+import { serveStatic } from "@hono/node-server/serve-static";
 import pg from "pg";
+import path from "path";
+import { fileURLToPath } from "url";
+import fs from "fs/promises";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const { Pool } = pg;
 
@@ -13,6 +20,7 @@ const app = new Hono();
 
 app.use("/*", cors());
 
+// API routes
 app.get("/api/parts/:lineItem", async (c) => {
   const lineItem = c.req.param("lineItem");
 
@@ -202,6 +210,19 @@ app.delete("/api/pricing-requests/:id", async (c) => {
   } catch (error) {
     console.error("Error deleting pricing request:", error);
     return c.json({ error: "Internal server error" }, 500);
+  }
+});
+
+// Serve static files from the dist directory
+app.use("/*", serveStatic({ root: "./dist" }));
+
+// Fallback for SPA: serve index.html for any other route
+app.get("*", async (c) => {
+  try {
+    const indexHtml = await fs.readFile(path.resolve(process.cwd(), "dist/index.html"), "utf-8");
+    return c.html(indexHtml);
+  } catch (e) {
+    return c.text("Not Found", 404);
   }
 });
 
